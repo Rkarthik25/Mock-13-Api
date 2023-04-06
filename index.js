@@ -5,7 +5,7 @@ const app=express()
 app.use(express.json())
 
 const {connection}=require("./db")
-
+const cors = require("cors")
 const {userRouter}=require("./routes/userRoutes")
 const { appointmentRouter } = require("./routes/appointmentRoutes")
 
@@ -18,7 +18,7 @@ app.get("/",(req,res)=>{
 app.use("/",userRouter)
 app.use("/",appointmentRouter)
 
-
+app.use(cors())
 app.listen(3030,async()=>{
     try{
         await connection
