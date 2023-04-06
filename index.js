@@ -3,9 +3,9 @@ const cors=require("cors")
 
 const app=express()
 app.use(express.json())
-
+app.use(cors())
 const {connection}=require("./db")
-const cors = require("cors")
+
 const {userRouter}=require("./routes/userRoutes")
 const { appointmentRouter } = require("./routes/appointmentRoutes")
 
