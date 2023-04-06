@@ -18,7 +18,7 @@ app.get("/",(req,res)=>{
 app.use("/",userRouter)
 app.use("/",appointmentRouter)
 
-app.use(cors())
+
 app.listen(3030,async()=>{
     try{
         await connection
