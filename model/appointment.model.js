@@ -2,7 +2,7 @@ const mongoose=require("mongoose")
 
 const appointmentSchema=mongoose.Schema({
     name:String,
-    Image:String,
+    image:String,
     specialization:{
         type:String,
         enum:["Cardiologist", "Dermatologist", "Pediatrician","Psychiatrist" ],

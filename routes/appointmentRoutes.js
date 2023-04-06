@@ -10,7 +10,7 @@ appointmentRouter.post("/appointments",async(req,res)=>{
     await post.save()
     res.send({"msg":"posts created"})
 })
-appointmentRouter.get("/appointments/",async(req,res)=>{
+appointmentRouter.get("/appointments",async(req,res)=>{
     const getData=await appointmentModel.find()
     res.send(getData)
 })
@@ -30,10 +30,6 @@ appointmentRouter.get("/appointments/page/:page",async(req,res)=>{
     const limit=4
         res.send(getData.splice((limit*req.params.page)-limit,limit*req.params.page))
 })
-appointmentRouter.patch("/appointments/",async(req,res)=>{
-    const getData=await appointmentModel.find()
-    const limit=4
-        res.send(getData.splice((limit*req.params.page)-limit,limit*req.params.page))
-})
+
 
 module.exports={appointmentRouter}
